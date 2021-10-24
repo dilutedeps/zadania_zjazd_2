@@ -63,5 +63,27 @@ with open(FILE) as file:
             pieces_sold = int(pieces_sold)
 
         order_date = datetime.fromisoformat(order_date)
-        
+
+        if order_date.year == 2020:
+            if order_date.month in [1,2,3]:
+                years["2020 Q1"] = liczenie_reve(price_per_item,pieces_sold)
+            elif order_date.month in [4,5,6]:
+                years["2020 Q2"] = liczenie_reve(price_per_item, pieces_sold)
+            elif order_date.month in [7, 8, 9]:
+                years["2020 Q3"] = liczenie_reve(price_per_item, pieces_sold)
+            else:
+                years["2020 Q4"] = liczenie_reve(price_per_item, pieces_sold)
+        else:
+            if order_date.month in [1,2,3]:
+                years["2021 Q1"] = liczenie_reve(price_per_item,pieces_sold)
+            elif order_date.month in [4,5,6]:
+                years["2021 Q2"] = liczenie_reve(price_per_item, pieces_sold)
+            elif order_date.month in [7, 8, 9]:
+                years["2021 Q3"] = liczenie_reve(price_per_item, pieces_sold)
+            else:
+                years["2021 Q4"] = liczenie_reve(price_per_item, pieces_sold)
+
+    print(years)
+
+
     
